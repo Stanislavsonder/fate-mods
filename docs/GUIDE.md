@@ -21,8 +21,6 @@ Answer the prompts:
   - `sheetComponents` — Vue sections on the character sheet
   - `dice` — extra 3D die shapes and/or materials
   - `theme` — a CSS skin
-  - `translations` — declared in the schema but not yet merged at runtime;
-    hold off on translation-pack submissions until the app ships the merge
 - **languages** — every language you'll ship a `translations/<lang>.json` for.
 
 You get a self-contained project: `manifest.json`, `bundle.ts`, `src/`,
