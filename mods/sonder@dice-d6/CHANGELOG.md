@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+Built for mod SDK 3.0 (Assistant for Fate 2.0).
+
 ## 1.3.1
 Updated cover image
 
