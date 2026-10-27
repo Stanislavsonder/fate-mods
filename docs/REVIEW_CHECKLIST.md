@@ -40,7 +40,7 @@ for it.
 - **`onInstall` idempotency.** The single most common first-PR bug: `onInstall`
   runs on every character load, not just the first install (see
   `docs/MOD_API.md` in the app repo). A mod that unconditionally writes a
-  default value instead of `getModData(...) ?? default` will silently wipe
+  default value instead of `getModData(character, id, key) ?? default` will silently wipe
   user data on every reload. Check for this explicitly.
 
 ## Ownership
