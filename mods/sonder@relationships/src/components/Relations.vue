@@ -7,30 +7,30 @@ import { computed, ref } from 'vue'
 import Relation from './parts/Relation.vue'
 import RelationForm from './parts/RelationForm.vue'
 import Modal from './parts/Modal.vue'
-import { RELATIONS_KEY } from '../actions'
+import { MOD_ID, RELATIONS_KEY } from '../actions'
 import type { CharacterRelation } from '../types'
 
 const character = defineModel<Character>({ required: true })
 
-const relations = computed<CharacterRelation[]>(() => getModData<CharacterRelation[]>(character.value, RELATIONS_KEY) ?? [])
+const relations = computed<CharacterRelation[]>(() => getModData<CharacterRelation[]>(character.value, MOD_ID, RELATIONS_KEY) ?? [])
 
 const isAddModalOpen = ref<boolean>(false)
 
 function addRelation(relation: CharacterRelation) {
-	setModData(character.value, RELATIONS_KEY, [...relations.value, relation])
+	setModData(character.value, MOD_ID, RELATIONS_KEY, [...relations.value, relation])
 	isAddModalOpen.value = false
 }
 
 function updateRelation(index: number, relation: CharacterRelation) {
 	const next = [...relations.value]
 	next.splice(index, 1, relation)
-	setModData(character.value, RELATIONS_KEY, next)
+	setModData(character.value, MOD_ID, RELATIONS_KEY, next)
 }
 
 function removeRelation(index: number) {
 	const next = [...relations.value]
 	next.splice(index, 1)
-	setModData(character.value, RELATIONS_KEY, next)
+	setModData(character.value, MOD_ID, RELATIONS_KEY, next)
 }
 </script>
 
